@@ -1,13 +1,17 @@
+import { ethers } from "ethers";
 import { HecoContract } from "../HecoContract";
+import BackConfigAbi from "../../config/BackConfig.json"
 
 export class BackConfig extends HecoContract{
 
-    public constructor(contractAddr: string, abi: any){
-        super(contractAddr,abi)
+    private static  contract = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
+
+    public constructor(){
+        super(BackConfig.contract,BackConfigAbi.abi)
     }
-    public async getPoolValue(){
+    public async getPoolValue(pooladdr:string, param:string):Promise<string>{
         console.log("getPoolValue")
 
-        return this.contract.getPoolValue("0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c","POOL_BACK_DEPOSIT_PERCENT")
+        return this.contract.getPoolValue(pooladdr, ethers.utils.formatBytes32String(param))
     }
 }
