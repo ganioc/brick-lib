@@ -1,7 +1,4 @@
 import { BackConfig } from "../lib/BACK/BackConfig"
-// import BackConfigAbi from "../config/BackConfig.json"
-
-
 
 async function main() {
     console.log('testconfig:')
