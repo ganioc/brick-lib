@@ -1,4 +1,5 @@
 import { BackConfig } from "../lib/BACK/BackConfig"
+import { BackPair } from "../lib/BACK/BackPair"
 import { BackPairFactory } from "../lib/BACK/BackPairFactory"
 import { BackPoolFactory } from "../lib/BACK/BackPoolFactory"
 
@@ -28,6 +29,27 @@ async function main(){
     console.log("\nShow pairs:")
     const pairFact = new BackPairFactory();
     await pairFact.show();
+    // for(const addr of pairFact.getAddresses()){
+    //     console.log("pair:", addr)
+    //     let result = await pairFact
+    // }
+    for (const addr of pairFact.getAddresses()){
+        console.log("pair:", addr)
+        const pairContract = new BackPair(addr);
+
+        await pairContract.show()
+
+        const pairPid =  await pairFact.getPidOfPair(addr);
+        pairFact.addPair({
+            address: addr,
+            token0: pairContract.getToken0(),
+            token1 : pairContract.getToken1(),
+            symbol0: pairContract.getSymbol0(),
+            symbol1: pairContract.getSymbol1(),
+            platform: parseInt(pairPid)
+        })
+    }
+    console.log(pairFact.getPairs())
 
 }
 

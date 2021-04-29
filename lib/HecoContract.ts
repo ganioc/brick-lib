@@ -15,8 +15,10 @@ export interface IPool{
 }
 export interface IPair{
     address: string;
+    token0:string;
+    token1: string;
+    symbol0: string;
     symbol1: string;
-    symbol2: string;
     platform: PoolPlatform;
 }
 

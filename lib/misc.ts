@@ -1,5 +1,5 @@
 import { BigNumber } from "bignumber.js";
-
+import hecotokens from "../config/token/hecotokens.json"
 export interface IResult <T> {
   err: number;
   data: T;
@@ -51,17 +51,16 @@ export interface ITokenInfo {
   address: string,
   decimals: number
 }
-// export function getTokenInfo(token: string): ITokenInfo | null {
-//   const lst = hecoTokenLst.list.filter((item: ITokenInfo) => {
-//     return (token === item.symbol)
-//   })
-//   if (lst.length > 0) {
-//     return lst[0]
-//   } else {
-//     console.error("Can't find ", token)
-//     return null
-//   }
-// }
+export function getHecoTokenInfoByAddr(addr: string): ITokenInfo | null {
+  const lst = hecotokens.list.filter((item: ITokenInfo) => {
+    return (addr.toLowerCase() === item.address.toLowerCase())
+  })
+  if (lst.length > 0) {
+    return lst[0]
+  } else {
+    throw new Error("Can't find "+ addr)
+  }
+}
 
 // export function getTokenFetcher(token:string):any{
 //   if(token === "BTC" || token === "HBTC"){
