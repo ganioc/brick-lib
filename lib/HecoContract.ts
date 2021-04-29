@@ -1,5 +1,6 @@
 import { BigNumber } from "bignumber.js";
 import { ethers } from "ethers";
+import { type } from "node:os";
 
 // T is th
 export class HecoContract{
@@ -16,5 +17,35 @@ export class HecoContract{
             abi,
             this.provider
         )
+    }
+    protected async callProperty(name:string, args?:any[]):Promise<string>{
+        const result = await this.contract[name](...args!);
+
+        console.log("callProperty:")
+        console.log(result)
+        console.log("typeof:", typeof result)
+        
+        if(typeof result === 'object' && result._isBigNumber){
+            return result.toString()
+        }else if(typeof result === 'string'){
+            return result;
+        }else{
+            throw new Error("callProperty fail")
+        }
+    }
+    protected async callMethod(name:string, args?:any[]):Promise<any>{
+        const result = await this.contract[name](...args!);
+
+        console.log("callMethod:")
+        console.log(result)
+        console.log("typeof:", typeof result)
+
+        if(typeof result === 'object' && result._isBigNumber){
+            return result.toString()
+        }else if(typeof result === 'string' || typeof result === 'object'){
+            return result;
+        }else{
+            throw new Error("callMethod fail")
+        }
     }
 }

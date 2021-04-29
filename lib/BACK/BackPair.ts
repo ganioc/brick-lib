@@ -1,5 +1,5 @@
 import { HecoContract } from "../HecoContract";
-import BackPairAbi from "../../config/BackPair.json"
+import BackPairAbi from "../../config/abi/BackPair.json"
 
 
 export class BackPair extends HecoContract{
