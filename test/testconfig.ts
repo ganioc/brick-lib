@@ -27,6 +27,17 @@ async function  getPoolValueAll(contract:ethers.Contract, address: string):Promi
     await getPoolValue(contract, address, "POOL_BACK_DEPOSIT_PERCENT")
     await getPoolValue(contract, address, "POOL_RESERVE_PERCENT")
 }
+async function getPoolInterest(contract:ethers.Contract,address:string):Promise<void>{
+    console.log(address)
+    const result = await contract.interestParams(address, ethers.utils.parseUnits("0"))
+
+    if(result){
+        console.log("base:", result.base.toString())
+        console.log("positioN:", result.position.toString())
+        console.log("ratio:", result.ratio.toString())
+        console.log("positive:", result.positive.toString())
+    }
+}
 
 async function main() {
     console.log('testconfig:')
@@ -80,6 +91,15 @@ async function main() {
 
     await getPoolValueAll(ctr.contract, "0xc2a284f250b320861f4639E11ce46d7731143478")
 
+
+    // let result = await ctr.contract.interestParams("0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c", ethers.utils.parseUnits("0"))
+    // console.log(result)
+    await getPoolInterest(ctr.contract, "0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c")
+    await getPoolInterest(ctr.contract, "0x4641fb5F67e70F47E382BDEB3fFc2F25D12f1B4e")
+    await getPoolInterest(ctr.contract, "0x161470d0c4D7ff5067Fc351e2CcBd84DdC15B57c")
+    await getPoolInterest(ctr.contract, "0x45932c4Ee3898810d5c1AB993F02Bf9784A51C9d")
+    await getPoolInterest(ctr.contract, "0x62F90dA3B6305f7a0c7E1DD6012E37886d2e539E")
+    await getPoolInterest(ctr.contract, "0xc2a284f250b320861f4639E11ce46d7731143478")
 }
 
 main()
