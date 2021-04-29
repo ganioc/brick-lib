@@ -1,0 +1,33 @@
+{
+    "prefix":"bk",
+    "list": [
+        {
+            "symbol": "USDT",
+            "address": "0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c"
+        },
+        {
+            "symbol": "HT",
+            "address": "0x4641fb5F67e70F47E382BDEB3fFc2F25D12f1B4e"
+        },
+        {
+            "symbol": "BTC",
+            "address": "0x161470d0c4D7ff5067Fc351e2CcBd84DdC15B57c"
+        },
+        {
+            "symbol": "ETH",
+            "address": "0x45932c4Ee3898810d5c1AB993F02Bf9784A51C9d"
+        },
+        {
+            "symbol": "HUSD",
+            "address": "0x62F90dA3B6305f7a0c7E1DD6012E37886d2e539E"
+        },
+        {
+            "symbol": "BXH",
+            "address": "0xc2a284f250b320861f4639E11ce46d7731143478"
+        },
+        {
+            "symbol": "MDX",
+            "address": "0x6A427be5811768D4b0A70c830BDc525339AeC08e"
+        }
+    ]
+}

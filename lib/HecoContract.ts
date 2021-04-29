@@ -3,6 +3,23 @@ import { ethers } from "ethers";
 import { type } from "node:os";
 
 // T is th
+export enum PoolPlatform{
+    BACK=0,
+    MDX=1,
+    BXH=2
+}
+export interface IPool{
+    address:string;
+    symbol: string;
+
+}
+export interface IPair{
+    address: string;
+    symbol1: string;
+    symbol2: string;
+    platform: PoolPlatform;
+}
+
 export class HecoContract{
     public static hecoUrl = "https://http-mainnet.hecochain.com"
     public static priceDecimals = 10;
@@ -21,13 +38,13 @@ export class HecoContract{
     protected async callProperty(name:string, args?:any[]):Promise<string>{
         const result = await this.contract[name](...args!);
 
-        console.log("callProperty:")
+        console.log("callProperty:", name)
         console.log(result)
         console.log("typeof:", typeof result)
         
         if(typeof result === 'object' && result._isBigNumber){
             return result.toString()
-        }else if(typeof result === 'string'){
+        }else if(typeof result === 'string' || typeof result === 'object'){
             return result;
         }else{
             throw new Error("callProperty fail")
@@ -36,7 +53,7 @@ export class HecoContract{
     protected async callMethod(name:string, args?:any[]):Promise<any>{
         const result = await this.contract[name](...args!);
 
-        console.log("callMethod:")
+        console.log("callMethod:", name)
         console.log(result)
         console.log("typeof:", typeof result)
 
