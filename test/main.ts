@@ -2,6 +2,7 @@ import { BackConfig } from "../lib/BACK/BackConfig"
 import { BackPair } from "../lib/BACK/BackPair"
 import { BackPairFactory } from "../lib/BACK/BackPairFactory"
 import { BackPoolFactory } from "../lib/BACK/BackPoolFactory"
+import { BackReward } from "../lib/BACK/BackReward"
 
 
 async function main(){
@@ -49,8 +50,23 @@ async function main(){
             platform: parseInt(pairPid)
         })
     }
-    console.log(pairFact.getPairs())
 
+    console.log("\nShow rewards:")
+    console.log(pairFact.getPairs())
+    const reward = new BackReward();
+
+    await reward.show()
+    for(const pair of pairFact.getPairs()){
+        console.log("pair:", pair.symbol0, pair.symbol1)
+        const result = await reward.queryPool(pair.address)
+        console.log("amountEarn: ", result)
+    }
+
+    for(const pair of poolFact.getPools()){
+        console.log("pair:", pair.address, pair.symbol)
+        const result = await reward.queryPool(pair.address)
+        console.log("amountEarn: ", result)
+    }
 }
 
 main()
