@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { HecoContract } from "../HecoContract";
-import BackRewardAbi from "../../config/BackReward.json"
+import BackRewardAbi from "../../config/abi/BackReward.json"
 
 export class BackReward extends HecoContract {
 
@@ -9,9 +9,5 @@ export class BackReward extends HecoContract {
     public constructor() {
         super(BackReward.contract, BackRewardAbi.abi)
     }
-    public async getWeights(pooladdr: string, param: string): Promise<string> {
-        
 
-        return ""
-    }
 }
