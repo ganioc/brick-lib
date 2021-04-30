@@ -38,7 +38,7 @@ async function main(){
         console.log("pair:", addr)
         const pairContract = new BackPair(addr);
 
-        await pairContract.show()
+        await pairContract.update()
 
         const pairPid =  await pairFact.getPidOfPair(addr);
         pairFact.addPair({

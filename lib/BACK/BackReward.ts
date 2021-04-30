@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import { HecoContract } from "../HecoContract";
 import BackRewardAbi from "../../config/abi/BackReward.json"
 import * as util from "util"
+import { table } from "node:console";
 
 export class BackReward extends HecoContract {
 
@@ -48,10 +49,20 @@ export class BackReward extends HecoContract {
         return this.callMethod("queryPool",[pair])
     }
 
-    public async showPool(pair:string):Promise<void>{
+    public async showPool(pool:string):Promise<void>{
         const tabWidth = 20
-        const result = await this.callMethod("queryPool",[pair])
+        const result = await this.callMethod("queryPool",[pool])
         console.log(util.format("%s%s","amountEarn".padEnd(tabWidth), result))
     }
-
+    public async showPoolStruct(pool:string):Promise<void>{
+        const tabWidth=20
+        const result:any = await this.callProperty("deposits",[pool])
+        // console.log("typeof result", typeof result)
+        // console.log(result)
+        for(const key in result){
+            if( ["0", "1","2"].indexOf(key) === -1){
+                console.log(util.format("%s%s",(key +"").padEnd(tabWidth), result[key].toString()))
+            }
+        }
+    }
 }

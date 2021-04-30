@@ -17,8 +17,7 @@ export class BackPairFactory extends HecoContract{
     public getPairs():IPair[]{ return this.pairs}
     public addPair(pair:IPair):number{ this.pairs.push(pair);
     return this.pairs.length}
-
-    public async show():Promise<void>{
+    public async update():Promise<void>{
         const tabWidth = 15
         let result = await this.callMethod("countPairs")
         console.log("There are " + result + " pairs.")
@@ -27,11 +26,40 @@ export class BackPairFactory extends HecoContract{
         // console.log(result)
         this.addresses = result;
 
-        // for(const ele of result){
-        //     console.log(util.format("%s%s","pair:".padEnd(tabWidth), ele))     
-        // }
+        for (const addr of this.getAddresses()){
+            // console.log("pair:", addr)
+            const pairContract = new BackPair(addr);
+    
+            await pairContract.update()
+    
+            const pairPid =  await this.getPidOfPair(addr);
 
-        // console.log(this.getAddresses())
+            const pair = {
+                address: addr,
+                token0: pairContract.getToken0(),
+                token1 : pairContract.getToken1(),
+                symbol0: pairContract.getSymbol0(),
+                symbol1: pairContract.getSymbol1(),
+                platform: parseInt(pairPid)
+            }
+            this.addPair(pair)
+
+            // console.log(util.format("\n%s%s", "symbol".padEnd(tabWidth), pair.symbol0+ "-" + pair.symbol1))
+            // console.log(util.format("%s%s", "address".padEnd(tabWidth), pair.address))
+            // console.log(util.format("%s%s", "token0".padEnd(tabWidth), pair.token0))
+            // console.log(util.format("%s%s", "token1".padEnd(tabWidth), pair.token1))
+            // console.log(util.format("%s%s", "platform".padEnd(tabWidth), pair.platform))
+        }
+
+    }
+    public async show():Promise<void>{
+        const tabWidth = 15
+        let result = await this.callMethod("countPairs")
+        console.log("There are " + result + " pairs.")
+
+        result = await this.callMethod("getPairs")
+        // console.log(result)
+        this.addresses = result;
 
         for (const addr of this.getAddresses()){
             // console.log("pair:", addr)

@@ -106,12 +106,16 @@ export class BackConfig extends HecoContract {
     }
     public async showPoolValue(pool:string):Promise<void>{
         const tabWidth = 30;
+        const tabNumber = 8;
         let result = await this.callMethod("getPoolValue",
             [pool, ethers.utils.formatBytes32String("POOL_BACK_DEPOSIT_PERCENT")])
         console.log(util.format("%s%s","POOL_BACK_DEPOSIT_PERCENT".padEnd(tabWidth), result))
         result = await this.callMethod("getPoolValue",
             [pool, ethers.utils.formatBytes32String("POOL_RESERVE_PERCENT")])
         console.log(util.format("%s%s","POOL_RESERVE_PERCENT".padEnd(tabWidth), result))
+
+        
+
     }
     public async showPoolInterest(pool:string):Promise<void>{
         const tabWidth = 30
@@ -125,5 +129,39 @@ export class BackConfig extends HecoContract {
         }else{
             console.log("empty")
         }
+    }
+    public async showPairValue(pair:string):Promise<void>{
+        const tabWidth = 30;
+        const tabNumber = 8;
+        
+        console.log(util.format("%s%s%s%s%s","".padEnd(tabWidth), 
+        "min".padEnd(tabNumber),
+        'max'.padEnd(tabNumber),
+        'span'.padEnd(tabNumber),
+        'value'.padEnd(tabNumber)))
+        let result:any = await this.callProperty("poolParams", [pair, ethers.utils.formatBytes32String("PAIR_LEVERAGE_RATE")])
+        // console.log(result)
+        console.log(util.format("%s%s%s%s%s","PAIR_LEVERAGE_RATE".padEnd(tabWidth), 
+        result['min'].toString().padEnd(tabNumber),
+        result['max'].toString().padEnd(tabNumber),
+        result['span'].toString().padEnd(tabNumber),
+        result['value'].toString().padEnd(tabNumber)))
+
+        result = await this.callProperty("poolParams", [pair, ethers.utils.formatBytes32String("PAIR_LIQUIDATION_RATE")])
+        // console.log(result)
+        console.log(util.format("%s%s%s%s%s","PAIR_LIQUIDATION_RATE".padEnd(tabWidth), 
+        result['min'].toString().padEnd(tabNumber),
+        result['max'].toString().padEnd(tabNumber),
+        result['span'].toString().padEnd(tabNumber),
+        result['value'].toString().padEnd(tabNumber)))
+
+        result = await this.callProperty("poolParams", [pair, ethers.utils.formatBytes32String("PAIR_LIQUIDATION_DISCOUNT")])
+        // console.log(result)
+        console.log(util.format("%s%s%s%s%s","PAIR_LIQUIDATION_DISCOUNT".padEnd(tabWidth),
+        result['min'].toString().padEnd(tabNumber),
+        result['max'].toString().padEnd(tabNumber),
+        result['span'].toString().padEnd(tabNumber),
+        result['value'].toString().padEnd(tabNumber)))
+
     }
 }
