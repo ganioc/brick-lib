@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { HecoContract } from "../HecoContract";
 import BackRewardAbi from "../../config/abi/BackReward.json"
+import * as util from "util"
 
 export class BackReward extends HecoContract {
 
@@ -24,26 +25,33 @@ export class BackReward extends HecoContract {
     }
 
     public async show():Promise<void>{
+        const tabWidth = 20
         this.backToken = await this.callProperty("backToken")
-        console.log("backToken:", this.backToken)
+        console.log(util.format("%s%s","backToken".padEnd(tabWidth), this.backToken))
 
         this.amountPerBlock = await this.callProperty("amountPerBlock")
-        console.log("amountPerBlock:", this.amountPerBlock)
+        console.log(util.format("%s%s","amountPerBlock".padEnd(tabWidth), this.amountPerBlock))
 
         this.amountPerWeight =  await this.callProperty("amountPerWeight")
-        console.log("amountPerWeight:", this.amountPerWeight)
+        console.log(util.format("%s%s","amountPerWeight".padEnd(tabWidth), this.amountPerWeight))
 
         this.lastUpdateBlock = await this.callProperty("lastUpdateBlock")
-        console.log("lastUpdateBlocK:", this.lastUpdateBlock)
+        console.log(util.format("%s%s","lastUpdateBlocK".padEnd(tabWidth), this.lastUpdateBlock))
 
         this.totalWeight = await this.callProperty("totalWeight")
-        console.log("totalWeight:", this.totalWeight)
+        console.log(util.format("%s%s","totalWeight".padEnd(tabWidth), this.totalWeight))
 
         this.mintedAmount = await this.callProperty("mintedAmount")
-        console.log("mintedAmount:", this.mintedAmount)
+        console.log(util.format("%s%s","mintedAmount".padEnd(tabWidth), this.mintedAmount))
     }
     public async queryPool(pair:string):Promise<string>{
         return this.callMethod("queryPool",[pair])
+    }
+
+    public async showPool(pair:string):Promise<void>{
+        const tabWidth = 20
+        const result = await this.callMethod("queryPool",[pair])
+        console.log(util.format("%s%s","amountEarn".padEnd(tabWidth), result))
     }
 
 }

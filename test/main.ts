@@ -21,6 +21,20 @@ async function main(){
         await bkconfig.showPoolValue(pool.address);
         await bkconfig.showPoolInterest(pool.address);
     }
+
+    console.log("\nShow pairs:")
+    const pairFact = new BackPairFactory();
+    await pairFact.show();
+
+    console.log("\nShow rewards:")
+    const reward = new BackReward();
+    await reward.show()
+
+    console.log("\nShow pool amountEarn:")
+    for(const pool of poolFact.getPools()){
+        console.log("\npool" , pool.symbol)
+        await reward.showPool(pool.address)
+    }
 }
 
 main()

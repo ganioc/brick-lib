@@ -44,7 +44,7 @@ export class BackPoolFactory extends HecoContract {
 
         result = await this.callMethod("getPools")
         this.allPools = this.parsePools(result);
-        console.log(this.allPools)
+        // console.log(this.allPools)
 
         return ""
     }
