@@ -40,9 +40,9 @@ export class HecoContract{
     protected async callProperty(name:string, args?:any[]):Promise<string>{
         const result = await this.contract[name](...args!);
 
-        console.log("callProperty:", name)
-        console.log(result)
-        console.log("typeof:", typeof result)
+        // console.log("callProperty:", name)
+        // console.log(result)
+        // console.log("typeof:", typeof result)
         
         if(typeof result === 'object' && result._isBigNumber){
             return result.toString()
@@ -55,9 +55,9 @@ export class HecoContract{
     protected async callMethod(name:string, args?:any[]):Promise<any>{
         const result = await this.contract[name](...args!);
 
-        console.log("callMethod:", name)
-        console.log(result)
-        console.log("typeof:", typeof result)
+        // console.log("callMethod:", name)
+        // console.log(result)
+        // console.log("typeof:", typeof result)
 
         if(typeof result === 'object' && result._isBigNumber){
             return result.toString()
