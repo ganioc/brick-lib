@@ -27,7 +27,7 @@ export class BackPoolFactory extends HecoContract {
                 return ele.address === addr
             })
             if (!filt) {
-                throw new Error("Not found:" + addr)
+                throw new Error("parsePools(), Not found:" + addr)
             }
             out.push({
                 address: addr,
@@ -40,11 +40,15 @@ export class BackPoolFactory extends HecoContract {
     public async show(): Promise<string> {
         let result = await this.callMethod("countPools")
         this.countPools = parseInt(result)
+        // console.log(this.countPools)
         console.log("There are " + this.countPools + " pools.")
 
         result = await this.callMethod("getPools")
+        console.log(result)
+
+
         this.allPools = this.parsePools(result);
-        // console.log(this.allPools)
+
 
         return ""
     }

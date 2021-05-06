@@ -44,6 +44,16 @@
             "symbol":"BACK",
             "address":"0x6474bc11F512DfE6A5162b2167e3f94b61471d05",
             "decimals": 18
+        },
+        {
+            "symbol":"FIL",
+            "address":"0xae3a768f9aB104c69A7CD6041fE16fFa235d1810",
+            "decimals":18
+        },
+        {
+            "symbol":"HPT",
+            "address":"0xe499ef4616993730ced0f31fa2703b92b50bb536",
+            "decimals":18
         }
     ]
 }

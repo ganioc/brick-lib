@@ -28,6 +28,14 @@
         {
             "symbol": "MDX",
             "address": "0x6A427be5811768D4b0A70c830BDc525339AeC08e"
+        },
+        {
+            "symbol":"HFIL",
+            "address":"0x0f59e8f9D31e748308dEb12CF3D66E72B937D965"
+        },
+        {
+            "symbol":"HPT",
+            "address":"0x81F755cf29C46565b309fD083f7Ed1f7bd402d30"
         }
     ]
 }

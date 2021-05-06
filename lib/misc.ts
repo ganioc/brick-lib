@@ -1,8 +1,8 @@
 import { BigNumber } from "bignumber.js";
 import hecotokens from "../config/token/hecotokens.json"
-export interface IResult <T> {
+export interface IResult {
   err: number;
-  data: T;
+  data: any;
 }
 
 /**
