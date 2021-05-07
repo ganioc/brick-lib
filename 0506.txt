@@ -1,0 +1,407 @@
+> node out/test/main.js
+
+Show Back Params:
+
+Show config:
+owner               0x6f87001B3dD1D4ab9a621b64A4dFB471A3C64CEc
+poolFactory         0xCCE77dCbCDEcC43520144a030CA15B38f6711832
+pairFactory         0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059
+platform            0x9c5dDcD6825413c52e7DA2ADBCFD30638D3B7A0d
+developer           0x6f87001B3dD1D4ab9a621b64A4dFB471A3C64CEc
+governor            0x0000000000000000000000000000000000000000
+swapper             0x0000000000000000000000000000000000000000
+platformToken       0x6474bc11F512DfE6A5162b2167e3f94b61471d05
+WETH                0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+mainReward          0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80
+lastPriceBlock      4458726
+DAY                 28800
+HOUT                1200
+
+Show pools:
+There are 9 pools.
+[
+  '0x4641fb5F67e70F47E382BDEB3fFc2F25D12f1B4e',
+  '0x161470d0c4D7ff5067Fc351e2CcBd84DdC15B57c',
+  '0x45932c4Ee3898810d5c1AB993F02Bf9784A51C9d',
+  '0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c',
+  '0x62F90dA3B6305f7a0c7E1DD6012E37886d2e539E',
+  '0xc2a284f250b320861f4639E11ce46d7731143478',
+  '0x6A427be5811768D4b0A70c830BDc525339AeC08e',
+  '0x0f59e8f9D31e748308dEb12CF3D66E72B937D965',
+  '0x81F755cf29C46565b309fD083f7Ed1f7bd402d30'
+]
+
+pool: HT
+POOL_BACK_DEPOSIT_PERCENT     4500
+POOL_RESERVE_PERCENT          2000
+base:                         1000
+positioN:                     8000
+ratio:                        1250
+positive:                     1
+
+pool: BTC
+POOL_BACK_DEPOSIT_PERCENT     4500
+POOL_RESERVE_PERCENT          2000
+base:                         1000
+positioN:                     8000
+ratio:                        1250
+positive:                     1
+
+pool: ETH
+POOL_BACK_DEPOSIT_PERCENT     4500
+POOL_RESERVE_PERCENT          2000
+base:                         1000
+positioN:                     8000
+ratio:                        1250
+positive:                     1
+
+pool: USDT
+POOL_BACK_DEPOSIT_PERCENT     6000
+POOL_RESERVE_PERCENT          2000
+base:                         1300
+positioN:                     8000
+ratio:                        1500
+positive:                     1
+
+pool: HUSD
+POOL_BACK_DEPOSIT_PERCENT     6000
+POOL_RESERVE_PERCENT          2000
+base:                         1300
+positioN:                     8000
+ratio:                        1500
+positive:                     1
+
+pool: BXH
+POOL_BACK_DEPOSIT_PERCENT     7500
+POOL_RESERVE_PERCENT          2000
+base:                         5000
+positioN:                     8000
+ratio:                        6250
+positive:                     1
+
+pool: MDX
+POOL_BACK_DEPOSIT_PERCENT     7000
+POOL_RESERVE_PERCENT          2000
+base:                         5000
+positioN:                     8000
+ratio:                        6250
+positive:                     1
+
+pool: HFIL
+POOL_BACK_DEPOSIT_PERCENT     5000
+POOL_RESERVE_PERCENT          2000
+base:                         1000
+positioN:                     8000
+ratio:                        1250
+positive:                     1
+
+pool: HPT
+POOL_BACK_DEPOSIT_PERCENT     5000
+POOL_RESERVE_PERCENT          2000
+base:                         1000
+positioN:                     8000
+ratio:                        1250
+positive:                     1
+
+Show rewards:
+backToken           0x6474bc11F512DfE6A5162b2167e3f94b61471d05
+amountPerBlock      10000000000000000000
+amountPerWeight     427658250000000000000000000000000000000
+lastUpdateBlocK     4459065
+totalWeight         10000
+mintedAmount        4303526450000000000000000
+
+Show pool amountEarn:
+
+pool: HT
+amountEarn          26400000000000000000
+weight              1200
+amountDebt          427638250000000000000000000000000000000
+amountEarn          0
+
+pool: BTC
+amountEarn          216000000000000000000
+weight              1200
+amountDebt          427480250000000000000000000000000000000
+amountEarn          0
+
+pool: ETH
+amountEarn          175000000000000000000
+weight              1250
+amountDebt          427520250000000000000000000000000000000
+amountEarn          0
+
+pool: USDT
+amountEarn          7800000000000000000
+weight              2600
+amountDebt          427658250000000000000000000000000000000
+amountEarn          0
+
+pool: HUSD
+amountEarn          84600000000000000000
+weight              1800
+amountDebt          427614250000000000000000000000000000000
+amountEarn          0
+
+pool: BXH
+amountEarn          4000000000000000000
+weight              1000
+amountDebt          427657250000000000000000000000000000000
+amountEarn          0
+
+pool: MDX
+amountEarn          3000000000000000000
+weight              750
+amountDebt          427657250000000000000000000000000000000
+amountEarn          0
+
+pool: HFIL
+amountEarn          11700000000000000000
+weight              100
+amountDebt          427544250000000000000000000000000000000
+amountEarn          0
+
+pool: HPT
+amountEarn          4800000000000000000
+weight              100
+amountDebt          427614250000000000000000000000000000000
+amountEarn          0
+
+Show pairs:
+There are 26 pairs.
+
+pair:               WHT-HUSD
+address             0xfa7fE51A4904586f9BFe5BA0eB93246928324F52
+token0              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               WHT-USDT
+address             0xAF483Ed1334c7892E8364E8d5fDF5E719089f7b7
+token0              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HUSD-USDT
+address             0x04F538583568606c5267f5Ab40a594e9801262D3
+token0              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-USDT
+address             0xa2b762071E74dA03DF65Df7963722BFCEcA944ed
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HBTC-USDT
+address             0x420331b722e3b5A4b738a7EdD6A629eAd48c5C98
+token0              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-HBTC
+address             0x9e7938bF9beeAaeA1ebC39797209e65b96b5cD42
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-USDT
+address             0x0159CC0F301D98c808a9BA1f6673A2D8C73F5fc7
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-HBTC
+address             0x01B49799D6301082fB612D4E9895b630dCcCb597
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               WHT-USDT
+address             0x4b8194c6340AF433CC2D57C80E1C1CCE3944E509
+token0              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               BXH-USDT
+address             0x5e436AaF61Be0815B6B607791602e0afBF46878e
+token0              0xcBD6Cb9243d8e3381Fea611EF023e17D1B7AeDF0
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               BXH-USDT
+address             0x181Ef02b6134a5454f8F15886877d481D01FD630
+token0              0xcBD6Cb9243d8e3381Fea611EF023e17D1B7AeDF0
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HBTC-HUSD
+address             0x41783d2131107424e4E1a05d297EFCdCdA31d421
+token0              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-HUSD
+address             0xe63165C3285230e43e3b6896b6E43553D194ff40
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HBTC-WHT
+address             0xF35eba0bbcC22259940dBeB2090d8Aab178117F9
+token0              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+token1              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               ETH-WHT
+address             0xBa27A1e07c28dA71BF9F1c3c1b89f8C9315D6e10
+token0              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+token1              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       850000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               MDX-USDT
+address             0xc71ca8AFD029A62925AB121f002D5FCC3f7dCa1b
+token0              0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               MDX-WHT
+address             0x9a2328bac698B031d9ae46a8308A86256158aeB1
+token0              0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c
+token1              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               BXH-WHT
+address             0xE6D872b65fB8D8c9882330604e5cD5FB4DdDa68F
+token0              0xcBD6Cb9243d8e3381Fea611EF023e17D1B7AeDF0
+token1              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               MDX-ETH
+address             0x7126eD00a8806b6FF7d0377Fb9e1620c5A75EB02
+token0              0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c
+token1              0x64FF637fB478863B7468bc97D30a5bF3A428a1fD
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               MDX-HBTC
+address             0x12eb45A5b1aeC1C176b22c76835D1D4d283dADC1
+token0              0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c
+token1              0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               FIL-USDT
+address             0x5c76621E653A1C23c9444D4Ed5bA58824B645f3D
+token0              0xae3a768f9aB104c69A7CD6041fE16fFa235d1810
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               FIL-HUSD
+address             0x752b13Fc155B75A3DCf226055d24b9Ef4851f166
+token0              0xae3a768f9aB104c69A7CD6041fE16fFa235d1810
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               BXH-HUSD
+address             0x8491D53b0e55A872Dc9213CCa253762954b56B99
+token0              0xcBD6Cb9243d8e3381Fea611EF023e17D1B7AeDF0
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HPT-USDT
+address             0x76cD757377399d8435C5681be0d020bCF24bd780
+token0              0xE499Ef4616993730CEd0f31FA2703B92B50bB536
+token1              0xa71EdC38d189767582C38A3145b5873052c3e47a
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HPT-WHT
+address             0xd364Eb6f6C770A4Ff4A099B6973eB55F33f82F91
+token0              0xE499Ef4616993730CEd0f31FA2703B92B50bB536
+token1              0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+pair:               HPT-HUSD
+address             0x5ab26362FC3E19C256Fb716d178d1482Fe3c8c90
+token0              0xE499Ef4616993730CEd0f31FA2703B92B50bB536
+token1              0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047
+                              min     max     span    value   
+PAIR_LEVERAGE_RATE            0       0       0       2000000000000000000
+PAIR_LIQUIDATION_RATE         0       0       0       800000000000000000
+PAIR_LIQUIDATION_DISCOUNT     0       0       0       920000000000000000
+
+------------------  End ----------------

@@ -20,6 +20,8 @@
     "axios": "^0.21.1",
     "bignumber.js": "^9.0.1",
     "ethers": "^5.1.4",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "typescript": "^4.2.4"
   }
 }
