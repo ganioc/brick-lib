@@ -16,3 +16,10 @@ npm run exec
 
 1.0.1 Basic function finished. Run in command line.
 
+## how to fetch user addresses and activities
+
+```
+npm run build
+node out/test/graphql/testgraph.js
+
+```
