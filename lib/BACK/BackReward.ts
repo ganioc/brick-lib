@@ -3,7 +3,12 @@ import { HecoContract } from "../HecoContract";
 import BackRewardAbi from "../../config/abi/BackReward.json"
 import * as util from "util"
 import { table } from "node:console";
+import { symbolName } from "typescript";
 
+export interface IRewardInfo{
+    name:string;
+    weight:number;
+}
 export class BackReward extends HecoContract {
 
     private static contract = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
@@ -63,6 +68,13 @@ export class BackReward extends HecoContract {
             if( ["0", "1","2"].indexOf(key) === -1){
                 console.log(util.format("%s%s",(key +"").padEnd(tabWidth), result[key].toString()))
             }
+        }
+    }
+    public async getRewardInfo(pool:string, symbol:string):Promise<IRewardInfo>{
+        const result:any = await this.callProperty("deposits",[pool])
+        return {
+            name: symbol,
+            weight: parseInt(result["0"].toString())
         }
     }
 }
