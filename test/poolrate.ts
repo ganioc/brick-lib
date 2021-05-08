@@ -56,7 +56,7 @@ function printPoolInterest(lst:IPoolInfo[]):void{
     for(const pool of lst){
         printFormatInterest(
             pool.name,
-            pool.weight/100 + "%",
+            pool.weight,
             pool.depositPercent/100 + "%",
             0,
             pool.baseRate/100 + "%",
@@ -73,7 +73,7 @@ function printPoolInterest(lst:IPoolInfo[]):void{
     "".padStart(tabWdith,"-"),
     "".padStart(tabWdith,"-"),
     "".padStart(tabWdith,"-"))
-    printFormatInterest("SUM",sumWeight(lst)/100+"%",
+    printFormatInterest("SUM",sumWeight(lst),
     "",
     "",
     "",
