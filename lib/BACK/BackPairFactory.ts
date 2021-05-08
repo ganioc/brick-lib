@@ -23,7 +23,7 @@ export class BackPairFactory extends HecoContract{
         console.log("There are " + result + " pairs.")
 
         result = await this.callMethod("getPairs")
-        // console.log(result)
+        console.log(result.length)
         this.addresses = result;
 
         for (const addr of this.getAddresses()){
