@@ -23,3 +23,10 @@ npm run build
 node out/test/graphql/testgraph.js
 
 ```
+
+## How to get pool interest?
+
+```
+node out/test/poolrate.js
+
+```
