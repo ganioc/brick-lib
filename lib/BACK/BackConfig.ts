@@ -117,9 +117,10 @@ export class BackConfig extends HecoContract {
         
 
     }
-    public async showPoolInterest(pool:string):Promise<void>{
+
+    public async showPoolInterestBasic(pool:string, index:number):Promise<void>{
         const tabWidth = 30
-        const result = await this.contract.interestParams(pool, ethers.utils.parseUnits("0"))
+        const result = await this.contract.interestParams(pool, index)
 
         if (result) {
             console.log(util.format("%s%s","base:".padEnd(tabWidth), result.base.toString()))
@@ -130,6 +131,12 @@ export class BackConfig extends HecoContract {
             console.log("empty")
         }
     }
+    public async showPoolInterest(pool:string):Promise<void>{
+        await this.showPoolInterestBasic(pool,0);
+        await this.showPoolInterestBasic(pool,1);
+        await this.showPoolInterestBasic(pool,2);
+    }
+
     public async showPairValue(pair:string):Promise<void>{
         const tabWidth = 30;
         const tabNumber = 8;
