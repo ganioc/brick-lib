@@ -18,8 +18,8 @@ async function main(){
 
     for(const pool of poolFact.getPools()){
         console.log("\npool:", pool.symbol)
-        await bkconfig.showPoolValue(pool.address);
-        await bkconfig.showPoolInterest(pool.address);
+        // await bkconfig.showPoolValue(pool.address);
+        // await bkconfig.showPoolInterest(pool.address);
     }
 
     console.log("\nShow rewards:")
@@ -27,13 +27,13 @@ async function main(){
     await reward.show()
 
     console.log("\nShow pool amountEarn:")
-    for(const pool of poolFact.getPools()){
-        console.log("\npool:" , pool.symbol)
-        await reward.showPool(pool.address)
-        await reward.showPoolStruct(pool.address)
-    }
+    // for(const pool of poolFact.getPools()){
+    //     console.log("\npool:" , pool.symbol)
+    //     await reward.showPool(pool.address)
+    //     await reward.showPoolStruct(pool.address)
+    // }
 
-    console.log("\nShow pairs:")
+    console.log("\nShow pairs, Please wait:")
     const pairFact = new BackPairFactory();
     await pairFact.update();
 

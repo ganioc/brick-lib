@@ -31,9 +31,9 @@ export class BackPair extends HecoContract{
         console.log(util.format("%s%s","pair:".padEnd(tabWidth), pair.symbol0+"-"+ pair.symbol1))
 
         console.log(util.format("%s%s","address".padEnd(tabWidth), pair.address))
-        console.log(util.format("%s%s","token0".padEnd(tabWidth), pair.token0))
+        // console.log(util.format("%s%s","token0".padEnd(tabWidth), pair.token0))
 
-        console.log(util.format("%s%s","token1".padEnd(tabWidth), pair.token1))
+        // console.log(util.format("%s%s","token1".padEnd(tabWidth), pair.token1))
 
     }
 

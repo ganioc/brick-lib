@@ -200,7 +200,7 @@ export class BackConfig extends HecoContract {
             result['min'].toString().padEnd(tabNumber),
             result['max'].toString().padEnd(tabNumber),
             result['span'].toString().padEnd(tabNumber),
-            result['value'].toString().padEnd(tabNumber)))
+            result['value'].toString().padStart(tabNumber)))
 
         result = await this.callProperty("poolParams", [pair, ethers.utils.formatBytes32String("PAIR_LIQUIDATION_RATE")])
         // console.log(result)
