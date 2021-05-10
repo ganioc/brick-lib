@@ -30,10 +30,6 @@ async function main() {
         const numresult = await token.getDecimals();
         console.log(numresult)
     }
-    // const result = await token.getSymbol();
-    // console.log(result)
-    // const numresult = await token.getDecimals();
-    // console.log(numresult)
 }
 
 main()

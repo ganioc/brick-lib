@@ -1,6 +1,7 @@
 import { HecoContract, IPool } from "../HecoContract";
 import BackPoolFactoryAbi from "../../config/abi/BackPoolFactory.json"
-import BackPools from "../../config/token/backpools.json"
+// import BackPools from "../../config/token/backpools.json"
+import { BackERC20 } from "./BackERC20";
 
 export class BackPoolFactory extends HecoContract {
     // private static contract = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
@@ -30,12 +31,13 @@ export class BackPoolFactory extends HecoContract {
             //     throw new Error("parsePools(), Not found:" + addr)
             // }
             // get symbols from the chain!
-
+            const token = new BackERC20(this.hecoUrl, addr);
+            const symbol = await token.getSymbol();
 
 
             out.push({
                 address: addr,
-                symbol: ""
+                symbol: symbol
             })
         }
         return out;

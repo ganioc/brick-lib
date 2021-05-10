@@ -1,7 +1,8 @@
 import { HecoContract, IPair } from "../HecoContract";
 import BackPairAbi from "../../config/abi/BackPair.json"
-import {  getHecoTokenInfoByAddr } from "../misc";
+// import {  getHecoTokenInfoByAddr } from "../misc";
 import * as util from "util"
+import { BackERC20 } from "./BackERC20";
 export class BackPair extends HecoContract{
 
     private token0: string ;
@@ -40,15 +41,19 @@ export class BackPair extends HecoContract{
     public async update():Promise<void>{
         this.token0 = await this.callProperty("token0")
 
-        let token = getHecoTokenInfoByAddr(this.token0)
+        // let token = getHecoTokenInfoByAddr(this.token0)
+        const token = new BackERC20(this.hecoUrl, this.token0);
+        const symbol = await token.getSymbol();
 
-        this.symbol0 = token!.symbol
+        this.symbol0 = symbol
 
         this.token1 = await this.callProperty("token1")
 
-        token = getHecoTokenInfoByAddr(this.token1)
+        // token = getHecoTokenInfoByAddr(this.token1)
+        const token1 = new BackERC20(this.hecoUrl, this.token1);
+        const symbol1 = await token1.getSymbol();
 
-        this.symbol1 = token!.symbol
+        this.symbol1 = symbol1
 
         this.swapper = await this.callProperty("swapper")
 
