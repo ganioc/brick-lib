@@ -11,7 +11,7 @@ export interface IRewardInfo{
 }
 export class BackReward extends HecoContract {
 
-    private static contract = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
+    // private static contract = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
 
     private backToken:string;
     private amountPerBlock:string;
@@ -20,8 +20,8 @@ export class BackReward extends HecoContract {
     private totalWeight: string;
     private mintedAmount: string;
 
-    public constructor() {
-        super(BackReward.contract, BackRewardAbi.abi)
+    public constructor(url:string, addrContract: string) {
+        super(url,addrContract, BackRewardAbi.abi)
         this.backToken=""
         this.amountPerBlock = ""
         this.amountPerWeight = ""

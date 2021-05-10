@@ -11,8 +11,8 @@ export class BackPair extends HecoContract{
     private swapper: string;
     private pledgeToken: string;
 
-    public constructor( contractAddr:string){
-        super(contractAddr, BackPairAbi.abi)
+    public constructor( hecoUrl:string, contractAddr:string){
+        super(hecoUrl, contractAddr, BackPairAbi.abi)
         this.token0=""
         this.token1=""
         this.symbol0=""

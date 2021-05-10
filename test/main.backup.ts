@@ -1,20 +1,27 @@
-import { BackConfig } from "../lib/BACK/BackConfig"
-import { BackPair } from "../lib/BACK/BackPair"
-import { BackPairFactory } from "../lib/BACK/BackPairFactory"
-import { BackPoolFactory } from "../lib/BACK/BackPoolFactory"
-import { BackReward } from "../lib/BACK/BackReward"
+// import { BackConfig } from "../lib/BACK/BackConfig"
+// import { BackPair } from "../lib/BACK/BackPair"
+// import { BackPairFactory } from "../lib/BACK/BackPairFactory"
+// import { BackPoolFactory } from "../lib/BACK/BackPoolFactory"
+// import { BackReward } from "../lib/BACK/BackReward"
+import { ContractGenerator } from "../lib/ContractGenerator"
 
+const urlChain = "https://http-mainnet.hecochain.com"
+const addrBackConfig  = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
+const addrBackPoolFactory = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
+const addrBackPairFactory  = "0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059"
+const addrBackReward = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
 
 async function main(){
     console.log("Show Back Params:")
+    const contractFact = new ContractGenerator(urlChain, "BACK");
     // contain all config parameters
     console.log("\nShow config:")
-    const config = new BackConfig()
+    const config = contractFact.createBackConfig(addrBackConfig)
     await config.show();
 
 
     console.log("\nShow pools:")
-    const poolFact = new BackPoolFactory();
+    const poolFact = contractFact.createBackPoolFactory(addrBackPoolFactory);
     await poolFact.show();
 
     for(const pool of poolFact.getPools()){
@@ -28,7 +35,7 @@ async function main(){
     }
 
     console.log("\nShow pairs:")
-    const pairFact = new BackPairFactory();
+    const pairFact = contractFact.createBackPairFactory(addrBackPairFactory);
     await pairFact.show();
     // for(const addr of pairFact.getAddresses()){
     //     console.log("pair:", addr)
@@ -36,7 +43,7 @@ async function main(){
     // }
     for (const addr of pairFact.getAddresses()){
         console.log("pair:", addr)
-        const pairContract = new BackPair(addr);
+        const pairContract = contractFact.createBackPair(addr);
 
         await pairContract.update()
 
@@ -53,7 +60,7 @@ async function main(){
 
     console.log("\nShow rewards:")
     console.log(pairFact.getPairs())
-    const reward = new BackReward();
+    const reward = contractFact.createBackReward(addrBackReward);
 
     await reward.show()
     for(const pair of pairFact.getPairs()){

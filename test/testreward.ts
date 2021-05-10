@@ -18,10 +18,16 @@ const pairs = [
     "0xc71ca8AFD029A62925AB121f002D5FCC3f7dCa1b",
     "0x9a2328bac698B031d9ae46a8308A86256158aeB1"
 ]
+const urlChain = "https://http-mainnet.hecochain.com"
+const addrBackConfig  = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
+const addrBackPairFactory  = "0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059"
+const addrBackPoolFactory = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
+const addrBackReward = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
+
 
 async function main() {
     console.log("check reward:")
-    const cont = new BackReward();
+    const cont = new BackReward(urlChain, addrBackReward);
 
     let result = await cont.contract.backToken();
     console.log("backToken:", result)

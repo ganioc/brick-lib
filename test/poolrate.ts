@@ -3,9 +3,16 @@ import { BackConfig, IPoolInfo } from "../lib/BACK/BackConfig";
 import { BackPoolFactory } from "../lib/BACK/BackPoolFactory";
 import { IRewardInfo } from "../lib/BACK/BackReward";
 import * as util from 'util'
+import { ContractGenerator } from "../lib/ContractGenerator";
 
 const headWidth = 8;
 const tabWdith = 10;
+
+const urlChain = "https://http-mainnet.hecochain.com"
+const addrBackConfig  = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
+const addrBackPairFactory  = "0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059"
+const addrBackPoolFactory = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
+const addrBackReward = "0xa2B27EaC08d1E792F2CE2d99C0331D0E495c4D80"
 
 function sumWeight(lst: IPoolInfo[]):number{
     let sum = 0;
@@ -85,16 +92,17 @@ function printPoolInterest(lst:IPoolInfo[]):void{
 
 async function main(){
     console.log("Show Back Params:")
+    const contractFact = new ContractGenerator(urlChain, "BACK");
 
-    const bkconfig = new BackConfig()
+    const bkconfig = contractFact.createBackConfig(addrBackConfig)
     // await bkconfig.show();
 
     console.log("\nShow pools:")
-    const poolFact = new BackPoolFactory();
+    const poolFact = contractFact.createBackPoolFactory(addrBackPoolFactory);
     await poolFact.show();
 
     console.log("\nShow rewards:")
-    const reward = new BackReward();
+    const reward = contractFact.createBackReward(addrBackReward);
     await reward.show()
     
     const poolLst :IPoolInfo[]= [];

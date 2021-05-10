@@ -15,7 +15,7 @@ export interface IPoolInfo {
 }
 export class BackConfig extends HecoContract {
 
-    private static contract = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
+    // private static contract = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
 
     private owner: string;
     private poolFactory: string;
@@ -33,8 +33,8 @@ export class BackConfig extends HecoContract {
     private DAY: string;
     private HOUR: string;
 
-    public constructor() {
-        super(BackConfig.contract, BackConfigAbi.abi)
+    public constructor(url:string, contractAddr:string) {
+        super(url, contractAddr, BackConfigAbi.abi)
         this.owner = ""
         this.poolFactory = ""
         this.pairFactory = ""

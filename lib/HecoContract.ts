@@ -23,14 +23,14 @@ export interface IPair{
 }
 
 export class HecoContract{
-    public static hecoUrl = "https://http-mainnet.hecochain.com"
+    // public static hecoUrl = "https://http-mainnet.hecochain.com"
     public static priceDecimals = 10;
 
     protected provider: ethers.providers.JsonRpcProvider;
     public contract: ethers.Contract;
 
-    public constructor(private contractAddr: string, private abi: any) {
-        this.provider = new ethers.providers.JsonRpcProvider(HecoContract.hecoUrl)
+    public constructor(protected hecoUrl:string, private contractAddr: string, private abi: any) {
+        this.provider = new ethers.providers.JsonRpcProvider(this.hecoUrl)
         this.contract = new ethers.Contract(
             this.contractAddr,
             abi,

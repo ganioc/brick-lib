@@ -3,13 +3,13 @@ import BackPoolFactoryAbi from "../../config/abi/BackPoolFactory.json"
 import BackPools from "../../config/token/backpools.json"
 
 export class BackPoolFactory extends HecoContract {
-    private static contract = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
+    // private static contract = "0xCCE77dCbCDEcC43520144a030CA15B38f6711832"
 
     private countPools: number;
     private allPools: IPool[];
 
-    public constructor() {
-        super(BackPoolFactory.contract, BackPoolFactoryAbi.abi)
+    public constructor(url:string, addrContract:string) {
+        super(url, addrContract, BackPoolFactoryAbi.abi)
         this.countPools = 0;
         this.allPools = []
     }

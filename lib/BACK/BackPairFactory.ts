@@ -3,13 +3,13 @@ import BackPairFActoryAbi from "../../config/abi/BackPairFactory.json"
 import { BackPair } from "./BackPair";
 import * as util from "util"
 export class BackPairFactory extends HecoContract{
-    private static contract = "0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059"
+    // private static contract = "0x3fcB7AF59a84d79F4Ce466E39e62183AC62C0059"
 
     private pairs:IPair[]
     private addresses:string[]
 
-    public constructor(){
-        super(BackPairFactory.contract,BackPairFActoryAbi.abi )
+    public constructor(url:string, addrContract:string){
+        super(url, addrContract,BackPairFActoryAbi.abi )
         this.pairs = []
         this.addresses = []
     }
@@ -28,7 +28,7 @@ export class BackPairFactory extends HecoContract{
 
         for (const addr of this.getAddresses()){
             // console.log("pair:", addr)
-            const pairContract = new BackPair(addr);
+            const pairContract = new BackPair(this.hecoUrl,addr);
     
             await pairContract.update()
     
@@ -63,7 +63,7 @@ export class BackPairFactory extends HecoContract{
 
         for (const addr of this.getAddresses()){
             // console.log("pair:", addr)
-            const pairContract = new BackPair(addr);
+            const pairContract = new BackPair(this.hecoUrl,addr);
     
             await pairContract.update()
     

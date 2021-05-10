@@ -1,6 +1,10 @@
 import { ethers } from "ethers";
 import { BackConfig } from "../lib/BACK/BackConfig"
 import {BigNumber} from "bignumber.js"
+import { ContractGenerator } from "../lib/ContractGenerator";
+
+const urlChain = "https://http-mainnet.hecochain.com"
+const addrBackConfig  = "0x51b4fa29dA61715d3384Be9f8a7033bD349Ef629"
 
 async function callMethod(contract:ethers.Contract, name:string) :Promise<void>{
     const result = await contract[name]();
@@ -49,7 +53,8 @@ async function getPoolInterest2(contract:ethers.Contract,address:string):Promise
 }
 async function main() {
     console.log('testconfig:')
-    const ctr = new BackConfig()
+    const contractFact = new ContractGenerator(urlChain, "BACK");
+    const ctr = contractFact.createBackConfig(addrBackConfig)
 
     // const  result = await ctr.getPoolValue("0x6B0113B0BFeaF0552995580BF7CA3AE306170e7c","POOL_BACK_DEPOSIT_PERCENT")
 
