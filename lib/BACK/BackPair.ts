@@ -1,6 +1,5 @@
 import { HecoContract, IPair } from "../HecoContract";
 import BackPairAbi from "../../config/abi/BackPair.json"
-// import {  getHecoTokenInfoByAddr } from "../misc";
 import * as util from "util"
 import { BackERC20 } from "./BackERC20";
 export class BackPair extends HecoContract{

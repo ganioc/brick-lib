@@ -1,7 +1,3 @@
-import { BackReward } from "..";
-import { BackConfig, IPoolInfo } from "../lib/BACK/BackConfig";
-import { BackPoolFactory } from "../lib/BACK/BackPoolFactory";
-import { IRewardInfo } from "../lib/BACK/BackReward";
 import * as util from 'util'
 import { ContractGenerator } from "../lib/ContractGenerator";
 

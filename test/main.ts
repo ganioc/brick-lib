@@ -1,6 +1,5 @@
 
 import { BackPair } from "../lib/BACK/BackPair"
-
 import { ContractGenerator } from "../lib/ContractGenerator"
 
 const urlChain = "https://http-mainnet.hecochain.com"
