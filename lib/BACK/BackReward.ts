@@ -1,9 +1,7 @@
-import { ethers } from "ethers";
+
 import { HecoContract } from "../HecoContract";
 import BackRewardAbi from "../../config/abi/BackReward.json"
 import * as util from "util"
-import { table } from "node:console";
-import { symbolName } from "typescript";
 
 export interface IRewardInfo{
     name:string;
