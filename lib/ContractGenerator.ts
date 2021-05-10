@@ -1,4 +1,5 @@
 import { BackConfig } from "./BACK/BackConfig";
+import { BackERC20 } from "./BACK/BackERC20";
 import { BackPair } from "./BACK/BackPair";
 import { BackPairFactory } from "./BACK/BackPairFactory";
 import { BackPoolFactory } from "./BACK/BackPoolFactory";
@@ -28,4 +29,7 @@ export class ContractGenerator{
     // public createBackContract<T>(addrContract:string):T{
     //     return new (this.url,addrContract);
     // }
+    public createBackERC20(addrContract:string):BackERC20{
+        return new BackERC20(this.url,addrContract)
+    }
 }

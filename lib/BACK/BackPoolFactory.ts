@@ -20,18 +20,22 @@ export class BackPoolFactory extends HecoContract {
             this.countPools = parseInt(result.toString())
         }
     }
-    private parsePools(result: string[]): IPool[] {
+    private async parsePools(result: string[]): Promise<IPool[] >{
         const out: IPool[] = [];
         for (const addr of result) {
-            const filt = BackPools.list.find((ele) => {
-                return ele.address === addr
-            })
-            if (!filt) {
-                throw new Error("parsePools(), Not found:" + addr)
-            }
+            // const filt = BackPools.list.find((ele) => {
+            //     return ele.address === addr
+            // })
+            // if (!filt) {
+            //     throw new Error("parsePools(), Not found:" + addr)
+            // }
+            // get symbols from the chain!
+
+
+
             out.push({
                 address: addr,
-                symbol: filt.symbol
+                symbol: ""
             })
         }
         return out;
@@ -47,7 +51,7 @@ export class BackPoolFactory extends HecoContract {
         console.log(result)
 
 
-        this.allPools = this.parsePools(result);
+        this.allPools = await this.parsePools(result);
 
 
         return ""

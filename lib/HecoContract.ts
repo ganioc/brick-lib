@@ -46,7 +46,7 @@ export class HecoContract{
         
         if(typeof result === 'object' && result._isBigNumber){
             return result.toString()
-        }else if(typeof result === 'string' || typeof result === 'object'){
+        }else if(typeof result === 'string' || typeof result === 'object' || typeof result === 'number'){
             return result;
         }else{
             throw new Error("callProperty fail")
@@ -61,7 +61,7 @@ export class HecoContract{
 
         if(typeof result === 'object' && result._isBigNumber){
             return result.toString()
-        }else if(typeof result === 'string' || typeof result === 'object'){
+        }else if(typeof result === 'string' || typeof result === 'object' || typeof result === 'number'){
             return result;
         }else{
             throw new Error("callMethod fail")
