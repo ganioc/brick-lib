@@ -1,4 +1,5 @@
 import * as util from 'util'
+import { IPoolInfo } from '../lib/BACK/BackConfig';
 import { ContractGenerator } from "../lib/ContractGenerator";
 
 const headWidth = 8;
